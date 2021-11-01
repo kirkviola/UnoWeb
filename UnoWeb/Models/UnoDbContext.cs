@@ -9,6 +9,7 @@ namespace UnoWeb.Models
     public class UnoDbContext : DbContext
     {
         // Tables go here
+        public virtual DbSet<Card> Cards { get; set; }
 
         public UnoDbContext(DbContextOptions<UnoDbContext> options)
             : base(options)

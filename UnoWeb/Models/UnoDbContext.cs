@@ -8,9 +8,9 @@ namespace UnoWeb.Models
 {
     public class UnoDbContext : DbContext
     {
-        // Tables go here
         public DbSet<Player> Players { get; set; }
         public DbSet<PlayerGame> PlayerGames { get; set; }
+        public virtual DbSet<Game> Games { get; set; }
 
         public UnoDbContext(DbContextOptions<UnoDbContext> options)
             : base(options)
@@ -36,8 +36,12 @@ namespace UnoWeb.Models
                     .WithMany(p => p.PlayerGames)
                     .HasForeignKey(p => p.PlayerId)
                     .OnDelete(DeleteBehavior.Restrict);
-                // Add foreign key to Game here
-                    
+                    });
+
+            builder.Entity<Game>(e =>
+            {
+                e.Property(e => e.GameRoom).HasMaxLength(15).ValueGeneratedOnAdd().IsRequired();
+                e.HasIndex(e => e.GameRoom).IsUnique();
             });
         }
     }

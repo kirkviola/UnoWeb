@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnoWeb", "UnoWeb\UnoWeb.csproj", "{02E747BB-27FA-4FDD-A40D-955D246F0D44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02E747BB-27FA-4FDD-A40D-955D246F0D44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E747BB-27FA-4FDD-A40D-955D246F0D44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E747BB-27FA-4FDD-A40D-955D246F0D44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E747BB-27FA-4FDD-A40D-955D246F0D44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E7E89BE-A9DC-47F5-AB6A-A2D9BBABE618}
+	EndGlobalSection
+EndGlobal

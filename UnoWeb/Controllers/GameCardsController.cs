@@ -72,6 +72,23 @@ namespace UnoWeb.Controllers
             return NoContent();
         }
 
+        [HttpPut("draw/{gameid}")]
+        public async Task<IActionResult> Draw(int gameid)
+        {
+            var game = await _context.Games.FindAsync(gameid);
+            if (game == null)
+            {
+                return NotFound();
+            }
+            var playerid = game.Active.Id;
+            var minSequence = await (from c in _context.GameCards orderby c.SequenceNumber select c).ToListAsync();
+            var gamecard = minSequence[0];
+            gamecard.SequenceNumber = null;
+            gamecard.PlayerId = playerid;
+            return await PutGameCard(gamecard.Id, gamecard);
+
+        }
+
         // POST: api/GameCards
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]

@@ -17,7 +17,7 @@ namespace UnoWeb.Models
         public UnoDbContext(DbContextOptions<UnoDbContext> options)
             : base(options)
         {
-
+            //
         }
         
         protected override void OnModelCreating(ModelBuilder builder)
@@ -27,7 +27,8 @@ namespace UnoWeb.Models
             {
                 e.ToTable("Players");
                 e.HasKey(p => p.Id);
-                e.Property(p => p.Name).HasMaxLength(60).IsRequired(true);
+                e.Property(p => p.Username).HasMaxLength(60).IsRequired(true);
+                e.HasIndex(e => e.Username).IsUnique();
             });
 
             builder.Entity<PlayerGame>(e =>

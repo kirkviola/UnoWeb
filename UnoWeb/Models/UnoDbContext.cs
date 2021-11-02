@@ -50,6 +50,7 @@ namespace UnoWeb.Models
             {
                 e.ToTable("GameCards");
                 e.HasKey(p => p.Id);
+                e.HasIndex(p => p.SequenceNumber).IsUnique(true);
                 e.HasOne(p => p.Player)
                     .WithMany(p => p.GameCards)
                     .HasForeignKey(p => p.PlayerId)

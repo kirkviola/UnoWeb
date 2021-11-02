@@ -7,10 +7,10 @@ public class Game
 {
     public int Id { get; set; }
     public string GameRoom { get; set; }
-    public Queue<Card> DealingDeck { get; set; }
-    public Queue<Card> DiscardDeck { get; set; }
-    public Queue<Player> Players { get; set; }
-    public Player active { get; set; }
+    public int PlayerCap { get; set; }
+    public virtual Player Active { get; set; }
+
+    public IEnumerable<GameCard> GameCards { get; set; }
 
     public Game()
 	{

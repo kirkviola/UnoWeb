@@ -10,9 +10,9 @@ namespace UnoWeb.Models
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
-        
-        public virtual IEnumerable<PlayerGame> PlayerGames { get; set; }
-        public virtual IEnumerable<GameCard> GameCards { get; set; }
+        public bool Win { get; set; }
 
+        public IEnumerable<PlayerGame> PlayerGames { get; set; }
+        public IEnumerable<GameCard> GameCards { get; set; }
     }
 }

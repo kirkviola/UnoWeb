@@ -5,12 +5,13 @@ using UnoWeb.Models;
 
 public class Game
 {
-    public int id { get; set; }
+    
+    public int Id { get; set; }
     public string GameRoom { get; set; }
-    public Queue<Card> DealingDeck { get; set; }
-    public Queue<Card> DiscardDeck { get; set; }
-    public Queue<Player> Players { get; set; }
-    public Player active { get; set; }
+    public int PlayerCap { get; set; }
+    
+    public virtual Player Active { get; set; }    
+    public virtual IEnumerable<GameCard> GameCards { get; set; }
 
     public Game()
 	{

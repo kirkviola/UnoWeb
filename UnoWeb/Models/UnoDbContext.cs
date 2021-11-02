@@ -11,6 +11,7 @@ namespace UnoWeb.Models
         public DbSet<Player> Players { get; set; }
         public DbSet<PlayerGame> PlayerGames { get; set; }
         public virtual DbSet<Game> Games { get; set; }
+        public virtual DbSet<Card> Cards { get; set; }
 
         public UnoDbContext(DbContextOptions<UnoDbContext> options)
             : base(options)

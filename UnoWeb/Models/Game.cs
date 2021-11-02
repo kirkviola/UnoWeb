@@ -10,7 +10,7 @@ public class Game
     public int PlayerCap { get; set; }
     public virtual Player Active { get; set; }
 
-    public IEnumerable<GameCard> GameCards { get; set; }
+    public virtual IEnumerable<GameCard> GameCards { get; set; }
 
     public Game()
 	{

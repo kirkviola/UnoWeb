@@ -80,7 +80,7 @@ namespace UnoWeb.Controllers
             {
                 return NotFound();
             }
-            var playerid = game.Active.Id;
+            var playerid = game.ActiveId;
             var minSequence = await (from c in _context.GameCards orderby c.SequenceNumber select c).ToListAsync();
             var gamecard = minSequence[0];
             gamecard.SequenceNumber = null;

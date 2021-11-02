@@ -29,7 +29,7 @@ namespace UnoWeb.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     GameRoom = table.Column<string>(type: "nvarchar(15)", maxLength: 15, nullable: false),
                     PlayerCap = table.Column<int>(type: "int", nullable: false),
-                    ActiveId = table.Column<int>(type: "int", nullable: true)
+                    ActiveId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,7 +39,7 @@ namespace UnoWeb.Migrations
                         column: x => x.ActiveId,
                         principalTable: "Players",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(

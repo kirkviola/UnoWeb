@@ -26,7 +26,7 @@ namespace UnoWeb.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("ActiveId")
+                    b.Property<int>("ActiveId")
                         .HasColumnType("int");
 
                     b.Property<string>("GameRoom")
@@ -138,7 +138,9 @@ namespace UnoWeb.Migrations
                 {
                     b.HasOne("UnoWeb.Models.Player", "Active")
                         .WithMany()
-                        .HasForeignKey("ActiveId");
+                        .HasForeignKey("ActiveId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Active");
                 });

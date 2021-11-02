@@ -13,7 +13,7 @@ namespace UnoWeb.Models
         public int? PlayerId { get; set; }
         public int GameId { get; set; }
         public bool IsPlayed { get; set; } = false;
-        public int SequenceNumber { get; set; }
+        public int? SequenceNumber { get; set; }
 
         public virtual Player Player { get; set; }
         public virtual Game Game { get; set; }

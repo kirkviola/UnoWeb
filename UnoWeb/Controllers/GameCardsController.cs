@@ -87,10 +87,31 @@ namespace UnoWeb.Controllers
             gamecard.PlayerId = playerid;
             return await PutGameCard(gamecard.Id, gamecard);
 
+
         }
 
-        // PUT: Shuffle cards in the deck
-        [HttpPut("{id}/shuffle")]
+        [HttpPut("play/{gameid")]
+        public async Task<IActionResult> Play(int gameid, GameCard card)
+        {
+            var game = await _context.Games.FindAsync(gameid);
+                    if (game == null)
+                    {
+                        return NotFound();
+                    }
+            var playerid = game.ActiveId;
+            if (card.PlayerId!=playerid)
+            {
+                return BadRequest();
+            }
+
+            card.PlayerId = null;
+            card.IsPlayed = true;
+            return await PutGameCard(card.Id, card);
+
+        }
+
+    // PUT: Shuffle cards in the deck
+    [HttpPut("{id}/shuffle")]
         public async Task<ActionResult<List<GameCard>>> Shuffle(int id)
         {
 

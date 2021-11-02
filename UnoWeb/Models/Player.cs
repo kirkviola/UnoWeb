@@ -12,7 +12,7 @@ namespace UnoWeb.Models
         public string Password { get; set; }
         public bool Win { get; set; }
 
-        public IEnumerable<PlayerGame> PlayerGames { get; set; }
-        public IEnumerable<GameCard> GameCards { get; set; }
+        public virtual IEnumerable<PlayerGame> PlayerGames { get; set; }
+        public virtual IEnumerable<GameCard> GameCards { get; set; }
     }
 }

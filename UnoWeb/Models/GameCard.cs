@@ -14,13 +14,21 @@ namespace UnoWeb.Models
         public int Id { get; set; }
         public Type CardType { get; set; }
         public Color CardColor { get; set; }
-        public int? PlayerId { get; set; }
+        public int? PlayerId { get; set; } = null;
         public int GameId { get; set; }
         public bool IsPlayed { get; set; } = false;
         public int? SequenceNumber { get; set; }
 
         public virtual Player Player { get; set; }
         public virtual Game Game { get; set; }
+
+        public GameCard () { }
+        public GameCard (Type cardtype, Color cardColor, int gameId)
+        {
+            this.CardType = cardtype;
+            this.CardColor = cardColor;
+            this.GameId = gameId;
+        }
 
     }
 }

@@ -12,6 +12,7 @@ namespace UnoWeb.Models
         public string Password { get; set; }
         
         public virtual IEnumerable<PlayerGame> PlayerGames { get; set; }
+        public virtual IEnumerable<GameCard> GameCards { get; set; }
 
     }
 }

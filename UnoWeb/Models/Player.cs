@@ -7,9 +7,12 @@ namespace UnoWeb.Models
 {
     public class Player
     {
-        int Id { get; set; }
-        public string Name { get; set; }
-        public List<Card> Hand { get; set; }
+        public int Id { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
         public bool Win { get; set; }
+
+        public IEnumerable<PlayerGame> PlayerGames { get; set; }
+        public IEnumerable<GameCard> GameCards { get; set; }
     }
 }

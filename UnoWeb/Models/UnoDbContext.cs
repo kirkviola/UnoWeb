@@ -11,13 +11,12 @@ namespace UnoWeb.Models
         public virtual DbSet<Player> Players { get; set; }
         public virtual DbSet<PlayerGame> PlayerGames { get; set; }
         public virtual DbSet<Game> Games { get; set; }
-        public virtual DbSet<Card> Cards { get; set; }
         public virtual DbSet<GameCard> GameCards { get; set; }
 
         public UnoDbContext(DbContextOptions<UnoDbContext> options)
             : base(options)
         {
-            //
+
         }
         
         protected override void OnModelCreating(ModelBuilder builder)

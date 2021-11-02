@@ -17,7 +17,7 @@ namespace UnoWeb.Models
         public UnoDbContext(DbContextOptions<UnoDbContext> options)
             : base(options)
         {
-
+            //
         }
         
         protected override void OnModelCreating(ModelBuilder builder)
